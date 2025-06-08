@@ -1,5 +1,3 @@
-// Updated by trungquandev.com's author on May 13 2023
-// Sample Eslint config for React project
 module.exports = {
   env: { browser: true, es2020: true, node: true },
   extends: [
@@ -21,12 +19,11 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'warn',
     'react/prop-types': 0,
     'react/display-name': 0,
-    
     // MUI
     'no-restricted-imports': [
       'error',
       {
-        'patterns': [{ 'regex': '^@mui/[^/]+$' }]
+        patterns: ['^@mui/[^/]+$']
       }
     ],
 
