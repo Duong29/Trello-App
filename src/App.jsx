@@ -1,10 +1,4 @@
-import Button from '@mui/material/Button'
-import { AccessAlarm, ThreeDRotation } from '@mui/icons-material'
-import HomeIcon from '@mui/icons-material/Home'
-import { pink } from '@mui/material/colors'
-import Typography from '@mui/material/Typography'
 import { useColorScheme } from '@mui/material/styles'
-import useMediaQuery from '@mui/material/useMediaQuery'
 import InputLabel from '@mui/material/InputLabel'
 import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
@@ -13,6 +7,7 @@ import LightModeIcon from '@mui/icons-material/LightMode'
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined'
 import SettingsBrightnessIcon from '@mui/icons-material/SettingsBrightness'
 import Box from '@mui/material/Box'
+import Container from '@mui/material/Container'
 
 
 function ModeSelect() {
@@ -50,40 +45,35 @@ function ModeSelect() {
     </FormControl>
   )
 }
-function ModeToggle() {
-  const { mode, setMode } = useColorScheme()
-  // const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
-  // const prefersLightMode = useMediaQuery('(prefers-color-scheme: light)')
-  return (
-    <Button onClick = {() => {setMode(mode === 'light' ? 'dark' : 'light')}}>
-      {mode === 'light' ? 'Turn dark' : 'Turn light'}
-    </Button>
-  )
-}
 function App() {
   return (
-    <>
-      <ModeSelect/>
-      <hr />
-      <ModeToggle/>
-      <hr />
-      <div>duongdeptrai</div>
-      <Typography variant='body2' color = "text.secondary">hi xin chao</Typography>
-      <Button variant="text">Text</Button>
-      <Button variant="contained">Contained</Button>
-      <Button variant="outlined">Outlined</Button>
-      <br />
-      <AccessAlarm/>
-      <ThreeDRotation/>
-      <br />
-      <HomeIcon color="primary" />
-      <HomeIcon color="secondary" />
-      <HomeIcon color="success" />
-      <HomeIcon color="action" />
-      <HomeIcon color="disabled" />
-      <HomeIcon sx={{ color: pink[300] }} />
-      <Button variant="contained" color="primary">Đặt hàng ngay   </Button>
-    </>
+    <Container disableGutters maxWidth = {false} sx={{ height: '100vh', width: '100%' }}>
+      <Box sx={{
+        backgroundColor: 'primary.light',
+        height: (theme) => theme.trello.appBarHeight,
+        display: 'flex',
+        alignItems: 'center'
+      }}>
+        <ModeSelect/>
+      </Box>
+      <Box sx={{
+        backgroundColor: 'primary.dark',
+        height: (theme) => theme.trello.boardBarHeight,
+        display: 'flex',
+        alignItems: 'center'
+      }}>
+        Board Bar
+      </Box>
+      <Box sx={{
+        backgroundColor: 'primary.main',
+        width: '100%',
+        display: 'flex',
+        alignItems: 'center',
+        height: (theme) => `calc(100vh - ${theme.trello.appBarHeight} - ${theme.trello.boardBarHeight})`
+      }}>
+        Board Content
+      </Box>
+    </Container>
   )
 }
 
