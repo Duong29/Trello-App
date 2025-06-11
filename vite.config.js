@@ -9,5 +9,10 @@ export default defineConfig({
     watch: {
       usePolling: true
     }
+  },
+  resolve : {
+    alias : [
+      { find : '~', replacement: '/src' }
+    ]
   }
 })
