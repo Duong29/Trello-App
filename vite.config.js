@@ -8,7 +8,8 @@ export default defineConfig({
   server: {
     host: true,
     watch: {
-      usePolling: true
+      usePolling: true,
+      interval: 100 // 100ms để bắt kịp thay đổi
     }
   },
   resolve : {

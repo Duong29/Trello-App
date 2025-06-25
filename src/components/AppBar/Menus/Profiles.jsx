@@ -30,7 +30,7 @@ function Profiles() {
           aria-haspopup="true"
           aria-expanded={open ? 'true' : undefined}
         >
-          <Avatar src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEpwypr1Ef96ASQu088dPHs29hkjdtk4QIzQ&s' sx={{ width: 32, height: 32 }}>M</Avatar>
+          <Avatar src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEpwypr1Ef96ASQu088dPHs29hkjdtk4QIzQ&s' sx={{ width: 36, height: 36 }}>M</Avatar>
         </IconButton>
       </Tooltip>
       <Menu
