@@ -33,7 +33,6 @@ function BoardBar() {
       gap: 2,
       overflowX: 'auto',
       backgroundColor: (theme) => (theme.palette.mode === 'dark' ? '#34495e' : '#1976d2'),
-      borderBottom: '1px solid white',
       px: 2,
       '&::-webkit-scrollbar-thumb ' : {
         backgroundColor: '#ced0da'
